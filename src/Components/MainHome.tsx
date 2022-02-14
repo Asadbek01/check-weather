@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Col, Container, Row, Form, Button } from 'react-bootstrap';
+import { Col, Container, Row, Form, Button, Jumbotron } from 'react-bootstrap';
+
 import {MainSearch } from '../types/interface';
 import Details from './Details';
 export const MainHome = () => {
@@ -15,8 +16,7 @@ export const MainHome = () => {
         try {
             const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${country}&appid=54baed561dc6416c02fd619c70a96bb1`)
           if (response.ok){
-              const data = await response.json() 
-              console.log(data)
+              const data = await response.json() as MainSearch[]    
               setWeather(data)
           } 
         } catch (error) {
@@ -65,11 +65,23 @@ export const MainHome = () => {
                         >Search</Button>
                         </Col>
                         <Col xs={10}>
-                        {
-                    //   weather.map((data) => {
-                    //       p
-                      
-                        }
+                         {
+                             weather.map((weatherData)=>{
+                            console.log(weatherData.timezone)
+
+                             }) 
+                             
+                         }
+                                <Jumbotron fluid className='w-75'>
+                                <h1>sdd</h1>
+                                <p>
+                                  
+                                </p>
+                                <p>
+                                  <Button variant="primary">Learn more</Button>
+                                </p>
+                              </Jumbotron>
+
                         </Col>
                     </Row>
                 </Form>

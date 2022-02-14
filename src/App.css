@@ -3,7 +3,10 @@
   display: flex;
   justify-content: space-evenly;
 }
+body{
+  background-image: url("https://cdn2.vectorstock.com/i/1000x1000/18/36/clouds-on-a-blue-sky-background-good-weather-vector-20551836.jpg")
 
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
